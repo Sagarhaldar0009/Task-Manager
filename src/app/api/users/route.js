@@ -55,6 +55,8 @@ export const POST = async (request) => {
       return NextResponse.json({
         message : "Failed to create User",
         status : false
+      },{
+        status:500,
       })
     }
 };

@@ -38,7 +38,7 @@ const CustomNavbar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/about" className="hover:text-blue-400">
+                    <Link href="/signup" className="hover:text-blue-400">
                         Sign Up
                     </Link>
                 </li>
