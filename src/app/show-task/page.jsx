@@ -6,7 +6,7 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div>Show Tasks</div>
+    <div>Show Tasks Page</div>
   )
 }
 
