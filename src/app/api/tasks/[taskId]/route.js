@@ -1,9 +1,14 @@
 
 // Using Dynamic Routes Concept - api/tasks/{taskId}
 
+import { connectDb } from "@/helper/db";
 import { getErrorResponse } from "@/helper/errorResponse";
 import { Task } from "@/models/task";
 import { NextResponse } from "next/server";
+
+
+// Connecting with DB, By calling the function.
+connectDb();
 
 // Get any Specific Task using it's Id from Parameters
 export const GET = async (request, {params}) => {

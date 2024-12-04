@@ -1,9 +1,14 @@
 // Particular User's Specific Task.
 // Complex API : localhost:3000/api/users/[userId]/tasks
 
+import { connectDb } from "@/helper/db";
 import { getErrorResponse } from "@/helper/errorResponse";
 import { Task } from "@/models/task";
 import { NextResponse } from "next/server";
+
+
+// Connecting with DB, By calling the function.
+connectDb();
 
 
 export const GET = async (request, {params}) => {

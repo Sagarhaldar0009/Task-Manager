@@ -1,6 +1,10 @@
+import { connectDb } from "@/helper/db";
 import { getErrorResponse } from "@/helper/errorResponse";
 import { Task } from "@/models/task";
 import { NextResponse } from "next/server";
+
+// Connecting with DB, By calling the function.
+connectDb();
 
 
 // API - Get all the Tasks

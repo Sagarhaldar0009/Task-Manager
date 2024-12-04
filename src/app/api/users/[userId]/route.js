@@ -1,9 +1,18 @@
 // Learning About Dynamic Routes
 
 
+
+
+
+
+import { connectDb } from "@/helper/db";
 // API for deleting the User
 import { User } from "@/models/user";
 import { NextResponse } from "next/server";
+
+
+connectDb();
+
 
 export const DELETE = async (request, { params }) => {
     const { userId } = params; // Extract the dynamic parameter 'id' from params 
