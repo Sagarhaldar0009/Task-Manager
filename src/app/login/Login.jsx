@@ -34,7 +34,7 @@ const Login = () => {
       console.log(result);
       toast.success("Logged In Successfully !!!");
       // After Logged In, Redirect to Home Page.
-      router.push("/profile/admin")
+      router.push("/profile/user")
 
     } catch (error) {
       console.log(error);
