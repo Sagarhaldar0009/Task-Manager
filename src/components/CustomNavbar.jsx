@@ -33,7 +33,7 @@ const CustomNavbar = () => {
         <div>
             <ul className="flex justify-center space-x-6">
                 <li>
-                    <Link href="#"className="hover:text-blue-400">
+                    <Link href="/login"className="hover:text-blue-400">
                         Login
                     </Link>
                 </li>

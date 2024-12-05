@@ -3,7 +3,7 @@ import SignUp from './SignUp';
 
 export const metadata = {
     title: "Sign Up - Task Manager",
-  };
+};
 
 const page = () => {
   return (
