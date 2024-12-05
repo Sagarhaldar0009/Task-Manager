@@ -1,9 +1,14 @@
 "use client";
 
+import { login } from '@/services/userService';
+import { useRouter } from 'next/navigation';
 import React, {useState, useEffect} from 'react'
 import { toast } from 'react-toastify';
 
 const Login = () => {
+
+  const router = useRouter();
+
   const [data, setData] = useState({
     email: "",
     password: ""
@@ -14,7 +19,7 @@ const Login = () => {
   //   // This code will only run on the client side
   // }, []);
 
-  const handleLogin=(event)=>{
+  const handleLogin = async (event)=>{
     event.preventDefault();
     // console.log(data);
     // Input Validation
@@ -23,7 +28,18 @@ const Login = () => {
       return;
     }
 
+    // Data is Correct - Now Login
+    try {
+      const result = await login(data);
+      console.log(result);
+      toast.success("Logged In Successfully !!!");
+      // After Logged In, Redirect to Home Page.
+      router.push("/profile/admin")
 
+    } catch (error) {
+      console.log(error);
+      toast.error(error.response.data.message);
+    }
   }
 
   return (
