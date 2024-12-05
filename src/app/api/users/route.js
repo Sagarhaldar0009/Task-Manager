@@ -1,6 +1,7 @@
 import { connectDb } from "@/helper/db";
 import { User } from "@/models/user";
 import { NextResponse } from "next/server";
+import bcrypt from "bcryptjs"
 
 // Connecting with DB, By calling the function.
 connectDb();
@@ -41,7 +42,10 @@ export const POST = async (request) => {
     });
 
     try{
-      // Save the Object in DB
+      // 1. Convert the Password in Hash Code (If we Use hashSync(), then we don't need to use async)
+      user.password = bcrypt.hashSync(user.password, parseInt(process.env.BCRYPT_SALT))
+      // 2. Now, Save the Object in DB
+      // console.log(user);
       const createdUser = await user.save();
 
       const response = NextResponse.json(user, {

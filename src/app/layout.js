@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import CustomNavbar from "@/components/CustomNavbar";
 import Footer from "@/components/Footer";
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 import { ToastContainer } from "react-toastify";
 
 const geistSans = localFont({
