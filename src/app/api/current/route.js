@@ -1,4 +1,4 @@
-// Using Context API - to get the Current LoggedIn User's data (by using cookie - to fetch the authToken)
+// Using an API - to get the Current LoggedIn User's data (by using cookie - to fetch the authToken)
 
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
