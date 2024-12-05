@@ -14,7 +14,7 @@ export const POST = async (request) => {
         const user = await User.findOne({
             email:email,
         })
-        console.log("User Data -> ",user);
+        console.log("User Data (Login API) -> ",user);
         // If don't get any User corresponding to Input Email Address
         if(user == null){
             throw new Error("User Not Found")
