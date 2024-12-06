@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import UserContext from './userContext'
 import { toast } from 'react-toastify';
-// import { httpAxios } from '@/helper/httpHelper';
+import { httpAxios } from '@/helper/httpHelper';
 import { currentUser } from '@/services/userService';
 
 const UserProvider = ({children}) => {

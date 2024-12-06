@@ -11,7 +11,8 @@ const AddTask = () => {
     title : "",
     content : "",
     status : "none",
-    userId : "67516a91c43e564108e18009", // Temporary Solution - Sagar Haldar's object I'd.
+    // userId : "67516a91c43e564108e18009", // Temporary Solution - Sagar Haldar's object I'd.
+    userId: "",
   });
 
   const handleAddTask = async (event) => {
@@ -116,8 +117,8 @@ const AddTask = () => {
               <option value="none" disabled>
                 ---Select Status---
               </option>
-              <option value="Pending">Pending</option>
-              <option value="Completed">Completed</option>
+              <option value="pending">Pending</option>
+              <option value="completed">Completed</option>
             </select>
           </div>
 

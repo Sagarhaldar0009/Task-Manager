@@ -2,6 +2,7 @@ import { connectDb } from "@/helper/db";
 import { getErrorResponse } from "@/helper/errorResponse";
 import { Task } from "@/models/task";
 import { NextResponse } from "next/server";
+import jwt from "jsonwebtoken";
 
 // Connecting with DB, By calling the function.
 connectDb();
@@ -22,9 +23,19 @@ export const GET = async (request) => {
 // API - Create Task
 export const POST = async (request) => {
   const {title, content, userId} = await request.json();
+
+  // fetching logged in user id
+  const authToken = request.cookies.get("authToken")?.value;
+  // console.log(authToken);
+  const data = jwt.verify(authToken, process.env.JWT_Secret_Key);
+  // console.log(data);
+  console.log("Logged In User's ID -> ",data._id);
+
   try {
     const task = new Task({
-        title, content, userId
+        title, 
+        content, 
+        userId : data._id,
     });
 
     const createdTask = await task.save();
