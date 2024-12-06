@@ -1,13 +1,12 @@
 import React from 'react'
+import { ShowTasks } from './ShowTasks'
 
 export const metadata = {
     title : "All Tasks - Task Manager"
 }
 
 const page = () => {
-  return (
-    <div>Show Tasks Page</div>
-  )
+  return <ShowTasks/>
 }
 
 export default page

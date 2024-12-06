@@ -22,7 +22,7 @@ export const GET = async (request) => {
 
 // API - Create Task
 export const POST = async (request) => {
-  const {title, content, userId} = await request.json();
+  const {title, content, userId, status} = await request.json();
 
   // fetching logged in user id
   const authToken = request.cookies.get("authToken")?.value;
@@ -36,6 +36,7 @@ export const POST = async (request) => {
         title, 
         content, 
         userId : data._id,
+        status,
     });
 
     const createdTask = await task.save();

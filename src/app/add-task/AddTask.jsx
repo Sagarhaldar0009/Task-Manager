@@ -17,7 +17,7 @@ const AddTask = () => {
 
   const handleAddTask = async (event) => {
     event.preventDefault();
-    // console.log(task);
+    console.log(task);
 
     // Validation on Task Data
 
@@ -117,8 +117,8 @@ const AddTask = () => {
               <option value="none" disabled>
                 ---Select Status---
               </option>
-              <option value="pending">Pending</option>
-              <option value="completed">Completed</option>
+              <option value="Pending">Pending</option>
+              <option value="Completed">Completed</option>
             </select>
           </div>
 
