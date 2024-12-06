@@ -1,18 +1,23 @@
 "use client";
 
 import UserContext from '@/contextAPI/userContext';
+import { logout } from '@/services/userService';
 import Link from 'next/link'; // We use this in NextJs, so the page didn't get Refreshed.
+import { useRouter } from 'next/navigation';
 import React, { useContext } from 'react'
 import { toast } from 'react-toastify';
 
 const CustomNavbar = () => {
+
   // Context of User (i.e, Payload) -> using ContextAPI
   const context = useContext(UserContext);
   console.log("PAYLOAD ON NAVBAR -> ",context);
 
+  const router = useRouter(); 
+
   async function doLogout() {
     try {
-      const result = await doLogout();
+      const result = await logout();
     //   console.log(result);
       context.setUser(undefined);
       toast.success("Logged Out Successfully !!!")

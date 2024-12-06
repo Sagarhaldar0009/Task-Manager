@@ -19,7 +19,7 @@ const UserProvider = ({children}) => {
                 setUser({ ...currentUserDetails });
             } catch (error) {
                console.log(error);
-               toast.error("Error in Loading current user");
+            //    toast.error("Error in Loading current user");
                setUser(undefined);
             }
         }

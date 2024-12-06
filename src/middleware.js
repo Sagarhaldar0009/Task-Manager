@@ -9,12 +9,15 @@ export function middleware(request) {
     const authToken = request.cookies.get("authToken")?.value;
     // console.log("Middleware : Token -> ",authToken);
 
-    if(request.nextUrl.pathname === "/api/login"){
+    if(request.nextUrl.pathname === "/api/login" || request.nextUrl.pathname === "/api/users"){
         return;
     }
 
     // If the User is LoggedIn, then they can't access Login and SignUp paths.
-    const loggedInUserNotAccessPaths = request.nextUrl.pathname === "/login" || request.nextUrl.pathname === "/signup";
+    const loggedInUserNotAccessPaths = 
+        request.nextUrl.pathname === "/login" || 
+        request.nextUrl.pathname === "/signup";
+
     // After Logged In (i.e, You will have authToken), if you're Trying to access the Login or SignUp paths, you'll automatically redirect to user profile path.
     if(loggedInUserNotAccessPaths){
         // Accessing not secured Routes
@@ -25,7 +28,23 @@ export function middleware(request) {
     else{
         // if you're not LoggedIn, then 1st Logged In, before trying to access secured routes.
         if(!authToken){
+
+            if (request.nextUrl.pathname.startsWith("/api")) {
+                return NextResponse.json(
+                  {
+                    message: "Access Denied !!",
+                    success: false,
+                  },
+                  {
+                    status: 401,
+                  }
+                );
+              }
+
             return NextResponse.redirect(new URL('/login', request.url))
+        }
+        else{
+            // Verify....
         }
     }
 }
