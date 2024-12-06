@@ -17,7 +17,7 @@ export async function login(loginData) {
   return result;
 }
 
-// API - to get the details of Logged In User's Detail
+// Using API - to get the details of Logged In User's Detail
 export async function currentUser() {
   const result = await httpAxios
     .get("/api/current")
@@ -25,9 +25,10 @@ export async function currentUser() {
   return result;
 }
 
-// export async function logout() {
-//   const result = await httpAxios
-//     .post("/api/logout")
-//     .then((response) => response.data);
-//   return result;
-// }
+// Using LogOut API - to logOut the User... 
+export async function logout() {
+  const result = await httpAxios
+    .post("/api/logout")
+    .then((response) => response.data);
+  return result;
+}

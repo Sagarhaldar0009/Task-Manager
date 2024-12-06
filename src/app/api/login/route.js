@@ -36,6 +36,7 @@ export const POST = async (request) => {
         const response = NextResponse.json({
             message:"Logged In Successfully !!!",
             success: true,
+            user: user
         });
         // authToken -> token name in cookie
         response.cookies.set("authToken", token, {

@@ -3,6 +3,7 @@
 import UserContext from '@/contextAPI/userContext';
 import Link from 'next/link'; // We use this in NextJs, so the page didn't get Refreshed.
 import React, { useContext } from 'react'
+import { toast } from 'react-toastify';
 
 const CustomNavbar = () => {
   // Context of User (i.e, Payload) -> using ContextAPI
@@ -11,13 +12,14 @@ const CustomNavbar = () => {
 
   async function doLogout() {
     try {
-      const result = await logout();
-      console.log(result);
+      const result = await doLogout();
+    //   console.log(result);
       context.setUser(undefined);
+      toast.success("Logged Out Successfully !!!")
       router.push("/");
     } catch (error) {
       console.log(error);
-      toast.error("Logout Error");
+      toast.error("Error in LogOut");
     }
   }
 
@@ -32,7 +34,7 @@ const CustomNavbar = () => {
         <div>
             <ul className="flex justify-center space-x-6">
                 {
-                    // If the User is Logged In, then show "Home","Add-Task","Show-Task" on NavBar
+                    // If the User is Logged In (user === some data) , then show "Home","Add-Task","Show-Task" on NavBar
                     context.user && (
                         <>
                             <li>
@@ -73,7 +75,7 @@ const CustomNavbar = () => {
                 }
 
                 {   
-                    // If the User is Not Logged In, then Only show the "Login" & "SignUp" Links for Logging In.
+                    // If the User is Not Logged In (user === undefined), then Only show the "Login" & "SignUp" Links for Logging In.
                     !context.user &&
                     (
                         <>
