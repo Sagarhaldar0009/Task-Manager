@@ -4,7 +4,8 @@ import CustomNavbar from "@/components/CustomNavbar";
 import Footer from "@/components/Footer";
 import 'react-toastify/dist/ReactToastify.min.css';
 import { ToastContainer } from "react-toastify";
-import UserContext from "@/contextAPI/userContext";
+// import UserContext from "@/contextAPI/userContext";
+import UserProvider from "@/contextAPI/userProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,12 +29,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       > 
-        <UserContext.Provider value={user}>
+        <UserProvider>
           <ToastContainer/>
           <CustomNavbar/>
-          {children}
+          <div className="mt-0">
+            {children}
+          </div> 
           <Footer/>
-        </UserContext.Provider>
+        </UserProvider>
       </body>
     </html>
   );
