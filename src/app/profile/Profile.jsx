@@ -4,8 +4,13 @@ import React, { useContext } from "react";
 import UserContext from "@/contextAPI/userContext";
 import { toast } from "react-toastify";
 import Link from "next/link";
+import { logout } from "@/services/userService";
+import { useRouter } from "next/navigation";
 
 const Profile = () => {
+
+  const router = useRouter();
+    
   const context = useContext(UserContext);
   const { user } = context;
 
@@ -15,6 +20,18 @@ const Profile = () => {
         <p className="text-gray-600 text-lg">No user data available. Please log in.</p>
       </div>
     );
+  }
+
+  async function doLogout() {
+    try {
+      const result = await logout();
+      context.setUser(undefined);
+      toast.success("Logged Out Successfully !!!");
+      router.push("/");
+    } catch (error) {
+      console.error(error);
+      toast.error("Error in LogOut");
+    }
   }
 
   return (
@@ -60,7 +77,7 @@ const Profile = () => {
         {/* Logout Button */}
         <div className="mt-6">
           <button
-            onClick={() => toast.info("Logout functionality coming soon!")}
+            onClick={doLogout}
             className="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-md"
           >
             Log Out
