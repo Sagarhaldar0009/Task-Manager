@@ -18,8 +18,8 @@ const Profile = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex justify-center items-center">
-      <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
+    <div className="min-h-screen bg-gray-800 flex justify-center items-center">
+      <div className="bg-gray-700 shadow-md rounded-lg p-6 w-full max-w-md">
         {/* Profile Picture */}
         <div className="flex flex-col items-center">
           <img
@@ -27,18 +27,18 @@ const Profile = () => {
             alt="Profile"
             className="w-24 h-24 rounded-full border-2 border-gray-300"
           />
-          <h1 className="text-xl font-semibold mt-4">{user.name || "No Name Available"}</h1>
+          <h1 className="text-xl text-white font-semibold mt-4">{user.name || "No Name Available"}</h1>
         </div>
 
         {/* Profile Details */}
         <div className="mt-6 space-y-4">
           <div>
-            <h2 className="text-gray-700 font-semibold">Email : </h2>
-            <p className="text-gray-600">{user.email || "No Email Provided"}</p>
+            <h2 className="text-white font-semibold">Email : </h2>
+            <p className="text-white">{user.email || "No Email Provided"}</p>
           </div>
           <div className="mt-6">
-            <h2 className="text-gray-700 font-semibold">About : </h2>
-            <p className="text-gray-600">
+            <h2 className="text-white font-semibold">About : </h2>
+            <p className="text-white">
               {user.about || "This user hasn't provided any details yet."}
             </p>
           </div>
@@ -47,10 +47,10 @@ const Profile = () => {
         {/* Portfolio Website */}
         {user.email === "sagarhaldar987@gmail.com" ? (
         <div className="flex mt-6 items-center">
-            <h2 className="text-gray-700 font-semibold mr-2">Portfolio:</h2>
+            <h2 className="text-white font-semibold mr-2">Portfolio:</h2>
             <Link
             href="https://portfolio-sand-six-18.vercel.app/"
-            className="text-blue-500 hover:underline"
+            className="text-blue-300 hover:underline"
             >
             Click here to visit the Portfolio
             </Link>
