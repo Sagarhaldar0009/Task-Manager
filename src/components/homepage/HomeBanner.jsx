@@ -4,8 +4,8 @@ import bannerImage from "../../assets/signup-icon.svg";
 import Image from "next/image";
 const BannerSection = () => {
   return (
-    <div className="bg-blue-500 text-white p-4">
-      <div className="container mx-auto flex items-center justify-around py-5">
+    <div className="bg-blue-500 text-white p-4 mt-14">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-around py-5">
         <div className="mr-4">
           <Image
             src={bannerImage} // Replace with the actual path to your image

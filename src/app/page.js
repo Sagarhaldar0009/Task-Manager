@@ -12,7 +12,7 @@ export const metadata = {
 
 const Home = () => {
   return (
-    <div>
+    <div className="mt-14">
       <BannerSection/>
       <FeatureSection/>
       <ActionSection/> 

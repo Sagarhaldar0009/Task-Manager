@@ -8,7 +8,7 @@ const FeatureSection = () => {
         <h2 className="text-3xl font-semibold text-center mb-8">
           Features of Task Manager
         </h2>
-        <div className="flex flex-wrap justify-center -mx-4">
+        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           <FeatureCard
             icon={<FiCheckCircle className="text-white w-8 h-8" />}
             title="Easy Task Management"
@@ -32,12 +32,10 @@ const FeatureSection = () => {
 
 const FeatureCard = ({ icon, title, description }) => {
   return (
-    <div className="w-full md:w-1/3 px-4 mb-8">
-      <div className="bg-blue-700 rounded-lg p-6 flex items-center justify-center flex-col h-full">
-        <div className="mb-4">{icon}</div>
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-white text-center">{description}</p>
-      </div>
+    <div className="bg-blue-700 rounded-lg p-6 flex items-center justify-center flex-col h-full">
+      <div className="mb-4">{icon}</div>
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <p className="text-white text-center">{description}</p>
     </div>
   );
 };
