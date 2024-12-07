@@ -203,7 +203,7 @@ const SignUp = () => {
         email: "",
         password: "",
         about: "",
-        profileUrl: "https://res.cloudinary.com/dvuuccuaj/image/upload/v1721475609/Portfolio/HomePage_Profile_Pic.png" // Temporary Link of Profile
+        profileUrl: "https://static.thenounproject.com/png/5034901-200.png" // Temporary Link of Profile
       });
     } catch (error) {
       console.log(error);
@@ -217,12 +217,12 @@ const SignUp = () => {
       email: "",
       password: "",
       about: "",
-      profileUrl: "https://res.cloudinary.com/dvuuccuaj/image/upload/v1721475609/Portfolio/HomePage_Profile_Pic.png" // Temporary Link of Profile
+      profileUrl: "https://static.thenounproject.com/png/5034901-200.png" // Temporary Link of Profile
     });
   };
 
   return (
-    <div className='min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-800 via-gray-900 to-black px-4 md:px-8 py-12 md:py-10 mt-12'>
+    <div className='min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-800 via-gray-900 to-black px-4 md:px-8 py-12 md:py-10 '>
       <div className='bg-gray-800 shadow-lg rounded-lg overflow-hidden max-w-md w-full p-6 sm:p-8'>
         <div className='flex flex-col items-center mb-6'>
           <Image 

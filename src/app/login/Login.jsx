@@ -140,7 +140,7 @@ const Login = () => {
       toast.success("Logged In Successfully !!!");
       context.setUser(result.user);
       // After Logged In, Redirect to Home Page.
-      router.push("/profile/user");
+      router.push("/profile");
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message);
