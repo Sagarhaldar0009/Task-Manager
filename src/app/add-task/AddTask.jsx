@@ -133,14 +133,18 @@ const AddTask = () => {
             <button
               type="button"
               className="w-full py-3 px-5 bg-red-600 rounded-lg hover:bg-red-500 transition-colors"
+              onClick={() => {
+                setTask({
+                  title: "",
+                  content: "",
+                  status: "none",
+                });
+              }}
             >
               Clear
             </button>
           </div>
         </form>
-        {/* {
-          JSON.stringify(task)
-        } */}
       </div>
     </div>
   );
