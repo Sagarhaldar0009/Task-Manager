@@ -10,6 +10,11 @@ export const POST = async (request) => {
     const {email, password} = await request.json();
 
     try {
+        // Validate secret key
+        if (!process.env.JWT_Secret_Key) {
+            throw new Error("JWT Secret Key is not defined.");
+        }
+
         // 1. Find User (ID) from DB using unique Email Id.
         const user = await User.findOne({
             email:email,
