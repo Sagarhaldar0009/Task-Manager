@@ -31,11 +31,21 @@ export default function RootLayout({ children }) {
       > 
         <UserProvider>
           <ToastContainer/>
-          <CustomNavbar/>
-          <div className="mt-0">
-            {children}
-          </div> 
-          <Footer/>
+          {/* <div className="flex flex-col min-h-screen">
+            <CustomNavbar/>
+            <div className="mt-0">
+              {children}
+            </div> 
+            <Footer/>
+          </div> */}
+          <div className="flex flex-col min-h-screen">
+            <CustomNavbar />
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+          </div>
+          
         </UserProvider>
       </body>
     </html>
