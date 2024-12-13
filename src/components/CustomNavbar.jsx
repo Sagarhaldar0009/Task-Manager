@@ -14,18 +14,6 @@ const CustomNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const router = useRouter();
 
-  // async function doLogout() {
-  //   try {
-  //     const result = await logout();
-  //     context.setUser(undefined);
-  //     toast.success("Logged Out Successfully !!!");
-  //     router.push("/");
-  //   } catch (error) {
-  //     console.error(error);
-  //     toast.error("Error in LogOut");
-  //   }
-  // }
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -41,13 +29,6 @@ const CustomNavbar = () => {
             Task Manager
           </Link>
         </div>
-        {/* <div className="flex items-center space-x-4">
-          <Link href="#!" className="text-xl md:text-2xl font-semibold hover:text-blue-400">
-            Task Manager
-          </Link>
-        </div> */}
-
-        
 
           {/* Links for Large Screens */}
     <div className="hidden md:flex space-x-8">
@@ -86,48 +67,6 @@ const CustomNavbar = () => {
       )
       }
     </div>
-
-        {/* Links for Large Screens */}
-        {/* <div className="hidden md:flex space-x-6">
-          {context.user && (
-            <>
-              <Link href="/" className="hover:text-blue-400">
-                Home
-              </Link>
-              <Link href="/add-task" className="hover:text-blue-400">
-                Add Task
-              </Link>
-              <Link href="/show-task" className="hover:text-blue-400">
-                Show Tasks
-              </Link>
-            </>
-          )}
-          {context.user ? (
-            <>
-              <Link href="/profile" className="hover:text-blue-400 flex items-center space-x-2">
-                <FaUserAlt/><span>{" "}Admin</span>
-              </Link>
-              {/* <button
-                onClick={doLogout}
-                className="hover:text-red-400 text-sm md:text-base"
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link href="/login" className="hover:text-blue-400">
-                Login
-              </Link>
-              <Link href="/signup" className="hover:text-blue-400">
-                Sign Up
-              </Link>
-            </>
-          )}
-        </div> */}
-
-
-
 
         {/* Hamburger Icon for Small Screens */}
         <div className="md:hidden">
@@ -168,14 +107,6 @@ const CustomNavbar = () => {
                     <FaUserAlt/><span>{" "}Admin</span>
                   </Link>
                 </li>
-                {/* <li>
-                  <button
-                    onClick={doLogout}
-                    className="hover:text-red-400 block text-sm"
-                  >
-                    Logout
-                  </button>
-                </li> */}
               </>
             ) : (
               <>
